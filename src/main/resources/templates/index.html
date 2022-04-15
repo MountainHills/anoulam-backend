@@ -1,13 +1,53 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Test Document</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css" th:href="@{/css/style.css}">
+    <title>Ano Ulam?</title>
 </head>
+
 <body>
+    <nav>
+        <h1 class="logo">AnoUlam.com</h1>
+        <a href="#home">Home</a>
+        <a href="#restaurants">Carinderias</a>
+        <a href="#contacts">Contact Us</a>
+    </nav>
+
+    <section id="home">
+        <h1>
+            Anong sulit na malapit?
+        </h1>
+    </section>
+
+    <section id="restaurants">
+        <header>
+            <h1>Mga Carinderiang Malpit Sa'yo!</h1>
+            <p>Garantisadong masarap at abot-kayang pagkain!</p>
+        </header>
+        <div class="container">
+            <div th:each="restaurant : ${restaurants}" class="box">
+                <img th:src="${restaurant.imagePath}" src="img/restaurants/restaurant1.jpg" alt="Restaurant Photo" class="image">
+                <div class="restaurant-name">
+                    <p th:text="${restaurant.name}">Anderson's Diner</p>
+                </div>
+                <div class="price">
+                    <p th:text="${restaurant.priceRange}">P150 - P500</p>
+                </div>
+                <a th:href="@{carinderia/kenny-rosie.html}" href="carinderia/kenny-rosie.html">
+                    <span class="clickable-box"></span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- <footer id="contacts">
+        Hello World
+    </footer> -->
 
 </body>
+
 </html>

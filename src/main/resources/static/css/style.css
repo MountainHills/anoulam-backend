@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap');
+/* Refer to: https://material.io/resources/color/#!/?view.left=1&view.right=0&primary.color=66BB6A */
+
+:root {
+    --primary: #64ba69;
+    --primary-light: #96ed98;
+    --primary-dark: #31893d;
+    --background-color-p: #e1e2e1;
+    --background-color-s: #f5f5f6;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    background-color: var(--background-color-p);
+}
+
+/* Start of Navigation */
+nav {
+    display: grid;
+    grid-template-columns: 7fr repeat(3, 1fr);
+    background-color: var(--primary);
+    height: 10vh;
+    position: sticky;
+    box-shadow: 0 0 1rem 0;
+}
+
+nav #restaurant-home {
+    background-color: var(--primary-dark);
+}
+
+.logo,
+nav a {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.logo {
+    margin: 0;
+    margin-left: 2rem;
+}
+
+nav a {
+    justify-content: center;
+    text-decoration: none;
+    color: black;
+}
+
+nav a:hover {
+    background-color: var(--primary-dark);
+    font-weight: 700;
+}
+
+/* End of Navigation */
+
+#home,
+.filler {
+    background-color: var(--primary);
+}
+
+/* Home Section */
+#home {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 90vh;
+    background-image: url("/img/bg/background3.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#home h1 {
+    color: var(--background-color-s);
+    margin-top: 12rem;
+    font-size: 4rem;
+    font-weight: 500;
+    text-shadow: 5px 5px 0.3rem black;
+}
+
+/* End of Home Section */
+
+/* Start of Restaurant Section */
+#restaurants {
+    margin: 0 4rem;
+    border-radius: 1rem;
+    background-color: var(--background-color-s);
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+    margin-top: -8rem;
+    box-shadow: 0 10px 1.5rem 0;
+}
+
+/* End of Restaurant Section */
+
+/* Start of Heading */
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 20vh;
+    background-color: var(--primary);
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+}
+
+header h1 {
+    text-align: center;
+    margin-bottom: 0;
+}
+
+/* End of Heading */
+
+/* Start of Restaurant and Menu */
+.container {
+    display: grid;
+    height: auto;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    align-items: center;
+    row-gap: 3rem;
+    column-gap: 3rem;
+    margin: 2rem 2.25rem;
+}
+
+.box {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    position: relative;
+    /* box-shadow: 0 0 1rem 0; */
+    border-radius: 1rem;
+}
+
+.clickable-box {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.image {
+    background-color: var(--background-color-s);
+    grid-column: 1 / 3;
+    height: 100%;
+    width: 100%;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+}
+
+
+.restaurant-name,
+.price {
+    display: flex;
+    align-items: center;
+    height: auto;
+    width: auto;
+    background-color: var(--primary);
+}
+
+.restaurant-name {
+    background-color: var(--primary-dark);
+    padding-left: 1rem;
+    border-bottom-left-radius: 0.5rem;
+}
+
+.price {
+    background-color: var(--primary-light);
+    justify-content: center;
+    border-bottom-right-radius: 0.5rem;
+    font-weight: 900;
+}
+
+/* End of Restaurant and Menu */
+
+/* Start of Footer */
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40vh;
+    background-color: var(--primary);
+}
+
+/* End of Footer */
