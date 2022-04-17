@@ -37,17 +37,12 @@
                 <div class="price">
                     <p th:text="${restaurant.priceRange}">P150 - P500</p>
                 </div>
-                <a th:href="@{carinderia/kenny-rosie.html}" href="carinderia/kenny-rosie.html">
+                <a th:href="@{restaurant/{name}(name = ${restaurant.name})}" href="/test.html">
                     <span class="clickable-box"></span>
                 </a>
             </div>
         </div>
     </section>
-
-    <!-- <footer id="contacts">
-        Hello World
-    </footer> -->
-
 </body>
 
 </html>

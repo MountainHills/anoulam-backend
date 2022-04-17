@@ -1,17 +1,19 @@
 package com.antonbondoc.AnoUlam.service;
 
 import com.antonbondoc.AnoUlam.entity.Restaurant;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Service
+@Log4j2
 public class RestaurantService {
     public List<Restaurant> getRestaurants() {
         List<String> sampleList = new ArrayList<>();
         sampleList.add("This is a keypoint");
-
+        log.info("Getting all the available restaurants");
         return List.of(
                 new Restaurant("Kenny Rosie Eatery",
                         "P70-P100",
