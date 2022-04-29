@@ -1,27 +1,48 @@
 package com.antonbondoc.AnoUlam.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
+import javax.persistence.*;
 import java.util.List;
 
+@Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class Restaurant {
-    private long id;
+
+    @Id
+    @SequenceGenerator(
+            name = "restaurant_sequence",
+            sequenceName = "restaurant_sequence",
+            allocationSize = 1
+    )
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "restaurant_sequence"
+    )
+    private Long restaurantId;
     private String name;
     private String priceRange;
-    private String imagePath;
-    private String description;
-    private List<String> keypoint;
 
-    public Restaurant(String name, String priceRange, String imagePath, String description, List<String> keypoint) {
-        this.name = name;
-        this.priceRange = priceRange;
-        this.imagePath = imagePath;
-        this.description = description;
-        this.keypoint = keypoint;
-    }
+    private String imagePath;
+
+    @Column(
+            columnDefinition = "LONGTEXT"
+    )
+    private String description;
+
+    @ElementCollection
+    @CollectionTable(
+            name = "keypoint",
+            joinColumns = @JoinColumn(
+                    name="keypoint_id"
+            )
+    )
+    @Column(
+            name = "keypoint",
+            columnDefinition = "LONGTEXT"
+    )
+    private List<String> keypoints;
 }

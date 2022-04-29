@@ -22,11 +22,11 @@
     <div class="information">
         <h1 th:text="${restaurant.name}">Kenny Rosie Eatery</h1>
         <p th:text="${restaurant.description}" class="short-description">This is a test description.</p>
-        <ul>
+        <!--<ul>
             <li th:each="point : ${restaurant.keypoint}" th:text="${point}">I can confirm that they give huge
                 amount of serving.
             </li>
-        </ul>
+        </ul>-->
     </div>
 </section>
 <section id="menu">
@@ -41,7 +41,7 @@
                 <p th:text="${item.name}">Beef Burger with Fries</p>
             </div>
             <div class="price">
-                <p th:text="${item.priceRange}">P60</p>
+                <p th:text="${item.price}">P60</p>
             </div>
         </div>
     </div>

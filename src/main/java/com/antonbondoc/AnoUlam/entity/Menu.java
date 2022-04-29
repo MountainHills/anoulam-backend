@@ -1,21 +1,30 @@
 package com.antonbondoc.AnoUlam.entity;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.persistence.*;
+
+@Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class Menu {
-    private long id;
+    @Id
+    @SequenceGenerator(
+            name = "menu_sequence",
+            sequenceName = "menu_sequence",
+            allocationSize = 1
+    )
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "menu_sequence"
+    )
+    private Long menuId;
     private String name;
-    private String priceRange;
+    private String price;
     private String imagePath;
-
-    public Menu(String name, String priceRange, String imagePath) {
-        this.name = name;
-        this.priceRange = priceRange;
-        this.imagePath = imagePath;
-    }
 }
